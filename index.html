@@ -37,7 +37,9 @@ img{display:block;max-width:100%}
 #tape::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--lime)}
 
 #pic{position:fixed;left:0;right:0;top:var(--top);bottom:var(--bot);overflow:hidden;background:var(--paper)}
-#pic.cut{filter:brightness(0)}
+@keyframes cutflash{0%{filter:brightness(0)}100%{filter:none}}
+#pic.cut{animation:cutflash 70ms steps(1,end)}
+html.still #pic.cut{animation:none}
 .f{position:absolute;inset:0;display:none;padding:clamp(20px,3.4vh,44px) var(--pad);overflow:hidden}
 .f.on{display:grid}
 .f.paper{background:var(--paper)}
@@ -140,7 +142,7 @@ p{max-width:40ch}
 
 @media (max-width:860px){
   html,body{overflow:auto;height:auto}
-  #top,#bot{display:none} #pic{position:static} #pic.cut{filter:none}
+  #top,#bot{display:none} #pic{position:static} #pic.cut{animation:none}
   .f{position:relative;display:grid!important;grid-template-columns:1fr!important;grid-template-rows:none!important;padding:36px 20px!important;gap:20px!important;min-height:auto}
   .l{white-space:normal} h1,h2{font-size:11vw!important} .l,.r{animation:none!important}
   .ph{min-height:42vh;height:auto!important;aspect-ratio:auto!important} #f8 .ph{min-height:30vh}
@@ -355,7 +357,7 @@ document.getElementById('tot').textContent=N;
   F.forEach((f,i)=>{const a=+f.dataset.amp||.5;for(let x=0;x<1000;x+=5){const e=Math.sin(Math.PI*x/1000)*.75+.25,y=50+(rnd()-.5)*88*a*e*(.4+.6*Math.abs(Math.sin(x*.021+i)));d+=`L${i*1000+x} ${y.toFixed(1)}`}});
   const s=document.querySelector('#tape svg');s.setAttribute('viewBox',`0 0 ${N*1000} 100`);s.style.width=N*100+'%';s.querySelector('path').setAttribute('d',d)})();
 function go(n){n=Math.max(0,Math.min(N-1,n));if(n===c&&F[n].classList.contains('on')&&go.ready)return;go.ready=1;
-  pic.classList.add('cut');setTimeout(()=>pic.classList.remove('cut'),55);
+  pic.classList.remove('cut');void pic.offsetWidth;pic.classList.add('cut');
   F.forEach((f,i)=>f.classList.toggle('on',i===n));c=n;t0=performance.now();
   document.querySelector('#tape svg').style.transform=`translateX(${-n/N*100}%)`;
   document.getElementById('idx').textContent=String(n+1).padStart(2,'0');
