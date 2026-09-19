@@ -149,7 +149,7 @@ p{max-width:40ch}
 #f13 .qr{background:var(--paper);padding:clamp(12px,1.6vw,24px);justify-self:end;width:min(100%,38vh)}
 #f13 .qr img{width:100%}
 
-@media (max-width:860px){
+@media screen and (max-width:860px){
   html,body{overflow:auto;height:auto}
   #top,#bot{display:none} #pic{position:static} #pic.cut{animation:none}
   .f{position:relative;display:grid!important;grid-template-columns:1fr!important;grid-template-rows:none!important;padding:36px 20px!important;gap:20px!important;min-height:auto}
@@ -164,7 +164,8 @@ p{max-width:40ch}
   @page{size:1600px 900px;margin:0}
   html,body{overflow:visible;height:auto;background:#fff}
   #top,#bot{display:none} #pic{position:static;overflow:visible}
-  .f{position:relative;display:grid!important;width:1600px;height:900px;break-after:page;padding:50px 72px}
+  :root{--top:0px;--bot:0px}
+  .f{position:relative;display:grid!important;width:1600px;height:900px;break-after:page;break-inside:avoid;overflow:hidden}
   .l,.r{animation:none!important} *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
