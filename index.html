@@ -108,16 +108,17 @@ p{max-width:40ch}
 #f7 .who div{padding:clamp(10px,1.6vh,18px) 18px 0 0} #f7 .who div+div{padding-left:18px;border-left:1px solid rgba(255,255,255,.3)}
 #f7 .who h3{font-family:var(--mono);font-size:clamp(12px,1vw,16px);letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:6px}
 #f7 .who p{font-size:clamp(16px,1.35vw,23px);line-height:1.34;max-width:none}
-#f8{grid-template-rows:34% 1fr;gap:clamp(12px,2.4vh,26px);padding-top:0;padding-left:0;padding-right:0}
+#f8{grid-template-rows:42% 1fr;gap:clamp(12px,2.4vh,26px);padding-top:0;padding-left:0;padding-right:0}
 #f8 .ph{outline:0} #f8 .ph img{object-position:50% 62%}
-#f8 .row{display:grid;grid-template-columns:36fr 64fr;gap:var(--pad);padding:0 var(--pad);align-items:start}
-#f8 .list li{grid-template-columns:clamp(44px,4vw,70px) 1fr}
-#f9{grid-template-columns:50fr 50fr;grid-template-rows:auto auto 1fr;gap:clamp(10px,2vh,24px) var(--pad);align-content:center}
+#f8 .row{display:grid;grid-template-columns:36fr 64fr;gap:var(--pad);padding:0 var(--pad);align-items:center}
+#f8 .list li{grid-template-columns:clamp(44px,4vw,70px) 1fr;font-size:clamp(18px,1.65vw,28px)}
+#f9{grid-template-columns:1fr;grid-template-rows:auto auto auto auto;gap:clamp(14px,3vh,34px);align-content:center}
 #f9 .bar{grid-column:1/-1;height:clamp(54px,9vh,96px);background:var(--ink);position:relative;display:flex;align-items:center;color:var(--paper);padding-left:calc(2% + 18px)}
 #f9 .bar::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2.02%;background:var(--pink)}
 #f9 .bar b{font-family:var(--display);font-weight:400;font-size:clamp(20px,2.4vw,40px);text-transform:uppercase}
-#f9 .tag{grid-column:1/-1;display:flex;justify-content:space-between;gap:20px;margin-top:-6px}
-#f9 .tag b{color:var(--pink)}
+#f9 .tag{display:flex;justify-content:space-between;align-items:baseline;gap:30px;margin-top:calc(clamp(14px,3vh,34px)*-.6)}
+#f9 .tag b{color:var(--pink);font-family:var(--display);font-weight:400;font-size:clamp(20px,2.4vw,40px);letter-spacing:0;white-space:nowrap}
+#f9 .tag .src{max-width:52ch;text-align:right}
 #f10{grid-template-columns:52fr 48fr;gap:var(--pad);padding-right:0;padding-top:0;padding-bottom:0}
 #f10 .col{padding:clamp(20px,3.4vh,44px) 0} #f10 .ph{height:100%;outline:0}
 #f10 .hand{color:var(--fire)} #f10 .k::before{background:var(--fire)}
@@ -278,7 +279,7 @@ p{max-width:40ch}
   <div style="grid-column:1/-1"><div class="k r" style="--i:0">Where it is · 2026</div>
   <h2 style="--hs:clamp(30px,4.2vw,80px);margin-top:12px"><span class="l" style="--li:0">A small slice of the money.</span><span class="l" style="--li:1">A big share of the <span class="hl">discovery</span>.</span></h2></div>
   <div class="bar r" style="--i:1"><b>Global recorded music · $31.7 billion</b></div>
-  <div class="tag m r" style="--i:2"><span><b>■ Sync · $641 million · about 2%</b></span><span class="src">Source · IFPI Global Music Report 2026 (2025 revenues). Sync dipped 2% after four straight years of growth.</span></div>
+  <div class="tag m r" style="--i:2"><b>&larr; Sync · $641 million · about 2%</b><span class="src">Source · IFPI Global Music Report 2026 (2025 revenues). Sync dipped 2% after four straight years of growth.</span></div>
   <ul class="list" style="grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:0 28px;border-top:0">
     <li class="r" style="--i:3;border-top:3px solid var(--ink)"><b>01</b><span><strong>One-stop is the default ask.</strong> What we had to explain in 2008 is now the first question.</span></li>
     <li class="r" style="--i:4;border-top:3px solid var(--ink)"><b>02</b><span><strong>Indie sits next to major.</strong> Libraries and independent catalogs are in every search.</span></li>
